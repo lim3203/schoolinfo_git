@@ -33,7 +33,6 @@ function getMenuAPI(){
   .then(function(json){
     schoolmealInfo = json.mealServiceDietInfo[1].row[0].DDISH_NM;
     console.log(schoolmealInfo);
-    
     try {
       HTMLschoolmeal.innerHTML = schoolmealInfo;
     } catch (e) {
