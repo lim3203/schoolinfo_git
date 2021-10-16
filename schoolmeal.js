@@ -36,9 +36,9 @@ function getMenuAPI(){
   });
 }
 
-
 function init(){
  getDateInfo();
+ 
  getMenuAPI();
 }
 
