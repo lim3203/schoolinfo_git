@@ -1,14 +1,19 @@
 const API_KEY = "4fc5c967cc2d4ee0943aa17e3a78d7a7",
   API_EDUCODE = localStorage.getItem("key"),
-  API_SCHOOLCODE = "8531070",
+  API_SCHOOLCODE = localStorage.getItem("SDCODE"),
+  stGrade = localStorage.getItem("GRADENUM"),
+  stNumber = localStorage.getItem("STNUM"),
+  claNumber = localStorage.getItem("CLANUM"),
   menuabc = document.querySelector(".menu"),
   menuabc2 = document.querySelector(".menua"),
-  date = new Date();
+  subTitle =  document.querySelector(".subTitle"),
+  date = new Date(),
   dayOfWeek = date.getDay();
   
 let API_DATE = "20210319",  
   API_DATE2 = "1",
   menuInfo = 0,
+  koScName = '0',
   menuInfo2 = 0;
 
 
@@ -19,8 +24,6 @@ function getDateInfo(){
   API_DATE2 = API_DATE+1;
   console.log(API_DATE2);
   console.log(API_DATE);
-  //console.log(dayOfWeek);
-  
 }
 
 function getMenuAPI(){
@@ -61,7 +64,8 @@ function init(){
   getDateInfo();
  getMenuAPI();
  getMenuAPI2();
-  // //이건 오늘 급식이 없어서...
+ koScName = localStorage.getItem("krScName");
+ subTitle.innerHTML = koScName;
 }
 
 

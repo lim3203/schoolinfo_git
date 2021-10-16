@@ -76,7 +76,7 @@ h4{
 .date{
   margin-left:2vw;
   margin-bottom: 1vw;
-  font-size: 2em;
+  font-size: 1.7em;
   font-family: 'Noto Sans KR', sans-serif;
   font-weight: 300;
 }
@@ -105,4 +105,3 @@ h1{
 body{
   padding: 1vw,5vw,5vw,1vw;
 }
-

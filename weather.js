@@ -1,13 +1,13 @@
 const API_KEY_W = "7430ba61efe6cd31509dcf372652c131",
 CITY_NAME = "naju",
+Atemp = document.querySelector(".temp"),
 cuWeaText = document.querySelector(".weathertext");
 
 
 let weatherJson = 0,
 currentWeather = 0,
-temp = 0,
 wind = 0,
-fTemp = 0;
+nTemp = 0;
 
 function getWeatherData(){
     console.log("weather");
@@ -19,7 +19,9 @@ function getWeatherData(){
       .then(function(json){
         console.log(json);
        currentWeather = json.weather[0].description;
-        console.log(currentWeather);
+       nTemp = json.main.temp;
+        console.log(nTemp);
+        Atemp.innerHTML = nTemp +' °C';
         cuWeaText.innerHTML = currentWeather;
       });
 }

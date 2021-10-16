@@ -24,9 +24,10 @@ function save(){
     console.log("It's working now!");
     console.log(provinceCode);
     SCHOOL_NAME = school.value;
+    localStorage.setItem("krScName", SCHOOL_NAME);
     localStorage.setItem("key", provinceCode);
     localStorage.setItem("STNUM", stNumber);
-    localStorage.setItem("CLANUM",claNumber);
+    localStorage.setItem("CLANUM", claNumber);
     localStorage.setItem("GRADENUM", stGrade);
     getSchoolCode();
 }
