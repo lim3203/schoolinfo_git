@@ -20,6 +20,22 @@ function showLS(){
     console.log(lsTest_data);
 }
 
+function getWeatherData(){
+    console.log("weather");
+    console.log(API_KEY_W);
+    fetch(`https://open.neis.go.kr/hub/schoolInfo?KEY=${API_KEY}TYPE=`)
+    .then(function(response){
+        return response.json();
+      })
+      .then(function(json){
+        console.log(json);
+       currentWeather = json.weather[0].description;
+        console.log(currentWeather);
+        cuWeaText.innerHTML = currentWeather;
+      });
+}
+
+
 function init(){
     console.log("hello");
     saveButton.addEventListener("click", save);
