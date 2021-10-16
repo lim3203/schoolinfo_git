@@ -12,14 +12,10 @@ const API_KEY = "4fc5c967cc2d4ee0943aa17e3a78d7a7",
   rightBotton = document.querySelector(".right");
   
 let API_DATE = "20210319",
-<<<<<<< HEAD
   schoolmealInfo = 0,
   koScName = '0',
   menuInfo2 = 0;
 
-=======
-  schoolmealInfo = 0;
->>>>>>> c24268efb376a8b8ce71331328dcbbca1876e09b
 
 
 
@@ -63,12 +59,8 @@ function init(){
  leftBotton.addEventListener('click', leftBottonClickHandle);
  rightBotton.addEventListener('click', rightBottonClickHandle);
  getMenuAPI();
-<<<<<<< HEAD
  koScName = localStorage.getItem("krScName");
  subTitle.innerHTML = koScName;
-=======
- 
->>>>>>> c24268efb376a8b8ce71331328dcbbca1876e09b
 }
 
 init();
