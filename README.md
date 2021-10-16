@@ -1,0 +1,2 @@
+# schoolinfo_git
+hello
