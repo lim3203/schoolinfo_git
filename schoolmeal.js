@@ -6,23 +6,27 @@ const API_KEY = "4fc5c967cc2d4ee0943aa17e3a78d7a7",
   claNumber = localStorage.getItem("CLANUM"),
   subTitle =  document.querySelector(".subTitle"),
   HTMLschoolmeal = document.querySelector(".schoolmeal"),
-  date = new Date();
-  dayOfWeek = date.getDay();
+  date = new Date(),
+  dayOfWeek = date.getDay(),
+  leftBotton = document.querySelector(".left"),
+  rightBotton = document.querySelector(".right");
   
 let API_DATE = "20210319",
+<<<<<<< HEAD
   schoolmealInfo = 0,
   koScName = '0',
   menuInfo2 = 0;
 
+=======
+  schoolmealInfo = 0;
+>>>>>>> c24268efb376a8b8ce71331328dcbbca1876e09b
 
 
 
 function getDateInfo(){
   API_DATE =`${date.getFullYear()}${date.getMonth()+1 > 9 ? date.getMonth()+1 : `0${date.getMonth()+1}`}${date.getDate() < 10 ? `0${date.getDate()}` : date.getDate() }`;//간소화?
   API_DATE = API_DATE*1;
-  console.log(API_DATE);
-  //console.log(dayOfWeek);
-  
+  console.log(API_DATE);  
 }
 
 function getMenuAPI(){
@@ -31,28 +35,40 @@ function getMenuAPI(){
     return response.json();
   })
   .then(function(json){
-    //console.log(json);
     schoolmealInfo = json.mealServiceDietInfo[1].row[0].DDISH_NM;
     console.log(schoolmealInfo);
     
-    if (dayOfWeek == 0 || dayOfWeek == 6){
-    HTMLschoolmeal.innerHTML = "오늘은 학교 안 가는 날!";
-  } else {
-    HTMLschoolmeal.innerHTML = schoolmealInfo;
-  }
+    try {
+      HTMLschoolmeal.innerHTML = schoolmealInfo;
+    } catch (e) {
+      HTMLschoolmeal.innerHTML = `${e} 급식 정보를 불러오지 못했습니다 :(`;
+    }
   });
+}
+
+function leftBottonClickHandle() {
+  API_DATE -= 1
+  console.log(API_DATE);
+  getMenuAPI();
+}
+
+function rightBottonClickHandle() {
+  API_DATE += 1
+  console.log(API_DATE);
+  getMenuAPI();
 }
 
 function init(){
  getDateInfo();
- 
+ leftBotton.addEventListener('click', leftBottonClickHandle);
+ rightBotton.addEventListener('click', rightBottonClickHandle);
  getMenuAPI();
+<<<<<<< HEAD
  koScName = localStorage.getItem("krScName");
  subTitle.innerHTML = koScName;
+=======
+ 
+>>>>>>> c24268efb376a8b8ce71331328dcbbca1876e09b
 }
 
-
 init();
-
-
-
