@@ -1,12 +1,19 @@
 const API_KEY = "4fc5c967cc2d4ee0943aa17e3a78d7a7",
   API_EDUCODE = localStorage.getItem("key"),
-  API_SCHOOLCODE = "8531070",
+  API_SCHOOLCODE = localStorage.getItem("SDCODE"),
+  stNumber = localStorage.getItem("STNUM"),
+  stGrade = localStorage.getItem("GRADENUM"),
+  claNumber = localStorage.getItem("CLANUM"),
+  subTitle =  document.querySelector(".subTitle"),
   HTMLschoolmeal = document.querySelector(".schoolmeal"),
   date = new Date();
   dayOfWeek = date.getDay();
   
 let API_DATE = "20210319",
-  schoolmealInfo = 0
+  schoolmealInfo = 0,
+  koScName = '0',
+  menuInfo2 = 0;
+
 
 
 
@@ -40,6 +47,8 @@ function init(){
  getDateInfo();
  
  getMenuAPI();
+ koScName = localStorage.getItem("krScName");
+ subTitle.innerHTML = koScName;
 }
 
 
