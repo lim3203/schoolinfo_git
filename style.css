@@ -12,7 +12,7 @@ h4 {
   font-family: "Noto Sans KR", sans-serif;
 }
 
-.date {
+.CSSdate {
   margin-left: 2vw;
   margin-bottom: 1vw;
   font-size: 3vw;
@@ -20,7 +20,7 @@ h4 {
   font-weight: 300;
 }
 
-.CSSmenu {
+.CSSschoolmeal {
   margin-top: 0;
   font-weight: 300;
   font-family: "Noto Sans KR", sans-serif;
@@ -72,7 +72,7 @@ body {
     align-items: flex-end;
   }
 
-  .date {
+  .CSSdate {
     margin-left: 2vw;
     margin-bottom: 1vw;
     font-size: 2em;
@@ -86,7 +86,7 @@ body {
     font-size: 45px;
   }
 
-  .CSSmenu {
+  .CSSschoolmeal {
     margin-top: 0;
     font-weight: 300;
     font-family: "Noto Sans KR", sans-serif;
