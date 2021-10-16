@@ -36,7 +36,7 @@ function getMenuAPI(){
       console.log(schoolmealInfo);
       HTMLschoolmeal.innerHTML = schoolmealInfo;
     } catch (e) {
-      HTMLschoolmeal.innerHTML = `${e.name} 급식 정보를 불러오지 못했습니다 :(`;
+      HTMLschoolmeal.innerHTML = `${e}: 급식 정보를 불러오지 못했습니다 :(`;
     }
   });
 }

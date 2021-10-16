@@ -1,20 +1,20 @@
 const saveButton = document.querySelector(".save"),
-lsTest = document.querySelector(".lsTest"),
-school = document.getElementById("shcoolName"),
-province = document.getElementById("province-select"),
-classNumber = document.getElementById("classNumber"),
-studentNumber = document.getElementById("studentNumber"),
-gradeNumber = document.getElementById("gradeNumber"),
-API_KEY = "9ebbd5bf03a048919172eb49571e6131";
+    lsTest = document.querySelector(".lsTest"),
+    school = document.getElementById("shcoolName"),
+    province = document.getElementById("province-select"),
+    classNumber = document.getElementById("classNumber"),
+    studentNumber = document.getElementById("studentNumber"),
+    gradeNumber = document.getElementById("gradeNumber"),
+    API_KEY = "9ebbd5bf03a048919172eb49571e6131";
 
 let 
-provinceCode = "0",
-SCHOOL_NAME = "0",
-sdSchoolCode = "0",
-stGrade = "0",
-claNumber = "0",
-stNumber = "0",
-lsTest_data = "0";
+    provinceCode = "0",
+    SCHOOL_NAME = "0",
+    sdSchoolCode = "0",
+    stGrade = "0",
+    claNumber = "0",
+    stNumber = "0",
+    lsTest_data = "0";
 
 function save(){
     provinceCode = province.options[province.selectedIndex].value;
