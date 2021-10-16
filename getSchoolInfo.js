@@ -7,13 +7,6 @@ API_KEY = "9ebbd5bf03a048919172eb49571e6131";
 let provinceCode = province.options[province.selectedIndex].text,
 lsTest_data = "0";
 
-function init(){
-    console.log("hello");
-    saveButton.addEventListener("click", save);
-    lsTest.addEventListener("click", showLS)
-
-}
-
 function save(){
     let provinceCode = province.options[province.selectedIndex].value;
     console.log("It's working now!");
@@ -25,6 +18,13 @@ function save(){
 function showLS(){
     lsTest_data = localStorage.getItem("key");
     console.log(lsTest_data);
+}
+
+function init(){
+    console.log("hello");
+    saveButton.addEventListener("click", save);
+    lsTest.addEventListener("click", showLS)
+
 }
 
 
