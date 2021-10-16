@@ -59,6 +59,14 @@ body {
     display: flex;
   }
 
+  h2 {
+    font-weight: 200;
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 30px;
+    margin-top: 0;
+    margin-left: 3vw;
+  }
+
   h4 {
     margin-top: 15px;
     margin-bottom: 15px;
@@ -96,6 +104,7 @@ body {
   .title {
     text-align: left;
     margin-left: 3vw;
+    margin-bottom: 1vw;
     font-family: "Noto Sans KR", sans-serif;
     font-weight: 600;
     font-size: 60px;
@@ -103,5 +112,21 @@ body {
 
   body {
     padding: 1vw, 5vw, 5vw, 1vw;
+  }
+
+  a {
+    text-decoration-line: none;
+    font-weight: 200;
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 20px;
+    margin-left: 3vw;
+  }
+
+  a:link{
+    color:#2d3436;
+  }
+
+  a:visited{
+    color:#00b894;
   }
 }
