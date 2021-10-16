@@ -1,0 +1,36 @@
+.title {
+    text-align: left;
+    margin-left: 3vw;
+    margin-bottom: 1vw;
+    font-family: "Noto Sans KR", sans-serif;
+    font-weight: 600;
+    font-size: 60px;
+  }
+
+.flex {
+    display: flex;
+    flex-direction: column;
+}
+
+.box {
+    margin: 3vw;
+    padding: 3vw;
+    border-radius: 2vw;
+    background: #f2e8de;
+  }
+
+a {
+    text-decoration-line: none;
+    font-weight: 200;
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 2vw;
+    margin-left: 3vw;
+  }
+
+  a:link{
+    color:#2d3436;
+  }
+
+  a:visited{
+    color:#00b894;
+  }

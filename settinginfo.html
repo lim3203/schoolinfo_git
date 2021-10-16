@@ -8,7 +8,8 @@
   </head>
   <body>
     <h1 class="title">학교 정보 설정</h1>
-    <select name="province" id="province-select">
+    <div class="box">
+    <select name="province" id="province-select" class="flex">
         <option value="B10">서울특별시</option>
         <option value="C10">부산광역시</option>
         <option value="D10">대구광역시</option>
@@ -28,13 +29,13 @@
         <option value="T10">제주도</option>
         <option value="V10">재외한국학교교육청</option>
     </select>
-    <input type="text" id="shcoolName" placeholder="학교명을 정확히 입력해주세요">
-    <input type="number" id="gradeNumber" placeholder="학년을 입력해주세요" min="1" max="6">
-    <input type="number" id="classNumber" placeholder="반을 입력해주세요" min="1" max="30">
+    <input type="text" id="shcoolName" class="flex" placeholder="학교명을 정확히 입력해주세요">
+    <input type="number" id="gradeNumber" class="flex" placeholder="학년을 입력해주세요" min="1" max="6">
+    <input type="number" id="classNumber" class="flex" placeholder="반을 입력해주세요" min="1" max="30">
     <input type="number" id="studentNumber" placeholder="번호를 입력해주세요" min="1" max="50">
-    <a href ='index.html'>go to main page</a>
-    <button class="save">저장</button>
-    <button class="lsTest">로컬스토리지 테스트 버튼</button>
+    </div>
+    <button class="save flex">저장</button>
+    <a href ='index.html' class="flex" >go to main page</a>
     <script src="getSchoolInfo.js"></script>
   </body>
 </html>
