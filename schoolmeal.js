@@ -27,11 +27,11 @@ function getMenuAPI(){
     schoolmealInfo = json.mealServiceDietInfo[1].row[0].DDISH_NM;
     console.log(schoolmealInfo);
     
-    if (dayOfWeek == 0 || dayOfWeek == 6){
-    HTMLschoolmeal.innerHTML = "오늘은 학교 안 가는 날!";
-  } else {
-    HTMLschoolmeal.innerHTML = schoolmealInfo;
-  }
+    try {
+      HTMLschoolmeal.innerHTML = schoolmealInfo;
+    } catch (e) {
+      HTMLschoolmeal.innerHTML = `${e} 급식 정보를 불러오지 못했습니다 :(`;
+    }
   });
 }
 
