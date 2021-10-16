@@ -8,7 +8,7 @@ const API_KEY = "4fc5c967cc2d4ee0943aa17e3a78d7a7",
   rightBotton = document.querySelector(".right");
   
 let API_DATE = "20210319",
-  schoolmealInfo = 0
+  schoolmealInfo = 0;
 
 
 
@@ -24,7 +24,6 @@ function getMenuAPI(){
     return response.json();
   })
   .then(function(json){
-    //console.log(json);
     schoolmealInfo = json.mealServiceDietInfo[1].row[0].DDISH_NM;
     console.log(schoolmealInfo);
     
