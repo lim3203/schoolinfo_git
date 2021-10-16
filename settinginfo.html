@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>School Info</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="infoStyle.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
     <h1 class="title">학교 정보 설정</h1>
@@ -29,6 +29,8 @@
         <option value="V10">재외한국학교교육청</option>
     </select>
     <input type="text" id="shcoolName" placeholder="학교 이름을 입력해주세요">
+    <input type="number" id="classNumber" placeholder="반을 입력해주세요" min="1" max="6">
+    <input type="number" id="studentNumber" placeholder="번호를 입력해주세요" min="1" max="50">
     <a href ='index.html'>go to main page</a>
     <button class="save">저장</button>
     <button class="lsTest">로컬스토리지 테스트 버튼</button>
