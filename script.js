@@ -1,5 +1,5 @@
 const API_KEY = "4fc5c967cc2d4ee0943aa17e3a78d7a7",
-  API_EDUCODE = "Q10",
+  API_EDUCODE = localStorage.getItem("key"),
   API_SCHOOLCODE = "8531070",
   menuabc = document.querySelector(".menu"),
   menuabc2 = document.querySelector(".menua"),
