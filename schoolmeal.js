@@ -2,8 +2,10 @@ const API_KEY = "4fc5c967cc2d4ee0943aa17e3a78d7a7",
   API_EDUCODE = localStorage.getItem("key"),
   API_SCHOOLCODE = "8531070",
   HTMLschoolmeal = document.querySelector(".schoolmeal"),
-  date = new Date();
-  dayOfWeek = date.getDay();
+  date = new Date(),
+  dayOfWeek = date.getDay(),
+  leftBotton = document.querySelector(".left"),
+  rightBotton = document.querySelector(".right");
   
 let API_DATE = "20210319",
   schoolmealInfo = 0
@@ -13,9 +15,7 @@ let API_DATE = "20210319",
 function getDateInfo(){
   API_DATE =`${date.getFullYear()}${date.getMonth()+1 > 9 ? date.getMonth()+1 : `0${date.getMonth()+1}`}${date.getDate() < 10 ? `0${date.getDate()}` : date.getDate() }`;//간소화?
   API_DATE = API_DATE*1;
-  console.log(API_DATE);
-  //console.log(dayOfWeek);
-  
+  console.log(API_DATE);  
 }
 
 function getMenuAPI(){
@@ -36,14 +36,24 @@ function getMenuAPI(){
   });
 }
 
-function init(){
- getDateInfo();
- 
- getMenuAPI();
+function leftBottonClickHandle() {
+  API_DATE -= 1
+  console.log(API_DATE);
+  getMenuAPI();
 }
 
+function rightBottonClickHandle() {
+  API_DATE += 1
+  console.log(API_DATE);
+  getMenuAPI();
+}
+
+function init(){
+ getDateInfo();
+ leftBotton.addEventListener('click', leftBottonClickHandle);
+ rightBotton.addEventListener('click', rightBottonClickHandle);
+ getMenuAPI();
+ 
+}
 
 init();
-
-
-
