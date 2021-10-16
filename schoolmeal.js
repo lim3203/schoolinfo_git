@@ -8,8 +8,8 @@ const API_KEY = "4fc5c967cc2d4ee0943aa17e3a78d7a7",
   HTMLschoolmeal = document.querySelector(".schoolmeal"),
   date = new Date(),
   dayOfWeek = date.getDay(),
-  leftBotton = document.querySelector(".left"),
-  rightBotton = document.querySelector(".right");
+  leftButton = document.querySelector(".left"),
+  rightButton = document.querySelector(".right");
   
 let API_DATE = "20210319",
   schoolmealInfo = 0,
@@ -55,8 +55,8 @@ function rightBottonClickHandle() {
 
 function init(){
  getDateInfo();
- leftBotton.addEventListener('click', leftBottonClickHandle);
- rightBotton.addEventListener('click', rightBottonClickHandle);
+ leftButton.addEventListener('click', leftBottonClickHandle);
+ rightButton.addEventListener('click', rightBottonClickHandle);
  getMenuAPI();
  koScName = localStorage.getItem("krScName");
  subTitle.innerHTML = koScName;
