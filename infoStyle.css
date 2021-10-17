@@ -26,8 +26,7 @@ input label {
     border-width: 2px;
     border:none;
     border-bottom: 1px solid #2d3436;
-    outline-style: none; /* 포커스시 발생하는 효과 제거를 원한다면 */ 
-    -moz-appearance: none; appearance: none; 
+    outline-style: none; 
     font-size: 1.8vw;
     margin: 1.2vw;
   }
