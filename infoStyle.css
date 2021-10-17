@@ -10,6 +10,31 @@
 .flex {
     display: flex;
     flex-direction: column;
+    margin: 0.7vw;
+}
+
+input label {
+   position: absolute; top: 1px; /* input 요소의 border-top 설정값 만큼 */ 
+  left: 1px; /* input 요소의 border-left 설정값 만큼 */ 
+  padding: .8em .5em; /* input 요소의 padding 값 만큼 */ 
+  color: #999; cursor: text; } 
+
+   input[type="text"],[type="number"] { 
+    width: 50%; /* 원하는 너비 설정 */ 
+    font-family: inherit; /* 폰트 상속 */ 
+    background-color: transparent;
+    border-width: 2px;
+    border:none;
+    border-bottom: 1px solid #2d3436;
+    outline-style: none; /* 포커스시 발생하는 효과 제거를 원한다면 */ 
+    -moz-appearance: none; appearance: none; 
+    font-size: 1.8vw;
+    margin: 1.2vw;
+  }
+
+
+.save {
+  margin: 3vw;
 }
 
 .box {

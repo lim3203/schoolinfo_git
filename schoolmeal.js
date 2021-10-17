@@ -60,6 +60,7 @@ function init(){
  getMenuAPI();
  koScName = localStorage.getItem("krScName");
  subTitle.innerHTML = koScName;
+ console.log(koScName);
 }
 
 init();
