@@ -20,10 +20,12 @@ function save(){
     console.log("It's working now!");
     console.log(provinceCode);
     SCHOOL_NAME = school.value;
+    localStorage.setItem("krScName", SCHOOL_NAME);
     localStorage.setItem("key", provinceCode);
     localStorage.setItem("CLANUM",claNumber);
     localStorage.setItem("GRADENUM", stGrade);
     getSchoolCode();
+    alert("학교 정보가 저장되었습니다 :D")
 }
 
 

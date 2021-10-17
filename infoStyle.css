@@ -35,6 +35,26 @@ input label {
 
 .save {
   margin: 3vw;
+  margin-top: 1vw;
+  padding: 3vw;
+  width: 70%;
+  border: none;
+  border-radius: 2vw;
+  background: #f2e8de;
+  text-align: center;
+  font-size: 1.5vw;
+}
+
+.save:active{
+  margin: 3vw;
+  margin-top: 1vw;
+  padding: 3vw;
+  width: 70%;
+  border: none;
+  border-radius: 2vw;
+  background: #b19b86;
+  text-align: center;
+  font-size: 1.5vw;
 }
 
 .box {
@@ -43,6 +63,10 @@ input label {
     border-radius: 2vw;
     background: #f2e8de;
   }
+
+.button{
+  margin-left: 3vw;
+}
 
 a {
     text-decoration-line: none;
