@@ -1,9 +1,7 @@
 const saveButton = document.querySelector(".save"),
-    lsTest = document.querySelector(".lsTest"),
     school = document.getElementById("shcoolName"),
     province = document.getElementById("province-select"),
     classNumber = document.getElementById("classNumber"),
-    studentNumber = document.getElementById("studentNumber"),
     gradeNumber = document.getElementById("gradeNumber"),
     API_KEY = "9ebbd5bf03a048919172eb49571e6131";
 
@@ -13,27 +11,21 @@ let
     sdSchoolCode = "0",
     stGrade = "0",
     claNumber = "0",
-    stNumber = "0",
     lsTest_data = "0";
 
 function save(){
     provinceCode = province.options[province.selectedIndex].value;
     claNumber = classNumber.value;
-    stNumber = studentNumber.value;
     stGrade = gradeNumber.value;
     console.log("It's working now!");
     console.log(provinceCode);
     SCHOOL_NAME = school.value;
     localStorage.setItem("key", provinceCode);
-    localStorage.setItem("STNUM", stNumber);
     localStorage.setItem("CLANUM",claNumber);
     localStorage.setItem("GRADENUM", stGrade);
     getSchoolCode();
 }
 
-function showLS(){
-    lsTest_data = localStorage.getItem("key");
-}
 
 function getSchoolCode(){
     console.log(lsTest_data);
@@ -54,8 +46,6 @@ function getSchoolCode(){
 function init(){
     console.log("hello");
     saveButton.addEventListener("click", save);
-    lsTest.addEventListener("click", showLS)
-
 }
 
 
