@@ -16,16 +16,18 @@ let API_DATE = "20210319",
   dayOfWeek = ''
 
 function getDateInfo(){
-  API_DATE =`${date.getFullYear()}${date.getMonth()+1 > 9 ? date.getMonth()+1 : `0${date.getMonth()+1}`}${date.getDate() < 10 ? `0${date.getDate()}` : date.getDate() }`;//간소화?
-  API_DATE = API_DATE*1;
-  console.log(API_DATE);  
+  API_DATE =`${date.getFullYear()}${date.getMonth()+1 > 9 ? date.getMonth()+1 : `0${date.getMonth()+1}`}${date.getDate() < 10 ? `0${date.getDate()}` : date.getDate() }`;
 }
 
-function weekendCheck(date){
-  const day = new Date(date).getDay()
+function weekendCheck(date){//수정 필요
+  console.log(date)
+  const thedate = new Date(date);
+  console.log(thedate);
+  const day = thedate.getDay()
   if  (day == 0 || day == 6){
     return true;
   } else {
+    console.log(day)
     return false;
   }
 }
@@ -41,7 +43,7 @@ function getMenuAPI(){
       console.log(schoolmealInfo);
       HTMLschoolmeal.innerHTML = schoolmealInfo;
     } catch (e) {
-      if (weekendCheck == true) {
+      if (weekendCheck(API_DATE)) {
         HTMLschoolmeal.innerHTML = '주말입니다!'
       } else {
         HTMLschoolmeal.innerHTML = `${e.name}:<br>급식 정보를 불러오지 못했습니다 :(`;
