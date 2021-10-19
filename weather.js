@@ -1,7 +1,7 @@
-const API_KEY_W = "7430ba61efe6cd31509dcf372652c131",
+const API_KEY_Weather = "7430ba61efe6cd31509dcf372652c131",
 CITY_NAME = "naju",
 Atemp = document.querySelector(".temp"),
-cuWeaText = document.querySelector(".weathertext");
+HTMLWeather = document.querySelector(".JSweather");
 
 
 let weatherJson = 0,
@@ -13,7 +13,7 @@ nTemp = 0;
 function getWeatherData(){
     console.log("weather");
     console.log(API_KEY_W);
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${CITY_NAME}&appid=${API_KEY_W}&lang=kr&units=metric`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${CITY_NAME}&appid=${API_KEY_Weather}&lang=kr&units=metric`)
     .then(function(response){
         return response.json();
       })
@@ -24,7 +24,7 @@ function getWeatherData(){
        console.log(nTemp);
        Atemp.innerHTML = nTemp +' °C';
         console.log(currentWeather);
-        cuWeaText.innerHTML = currentWeather;
+        HTMLWeather.innerHTML = currentWeather;
       });
 }
 
