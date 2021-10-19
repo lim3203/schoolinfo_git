@@ -12,7 +12,7 @@ nTemp = 0;
 
 function getWeatherData(){
     console.log("weather");
-    console.log(API_KEY_W);
+    console.log(API_KEY_Weather);
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${CITY_NAME}&appid=${API_KEY_Weather}&lang=kr&units=metric`)
     .then(function(response){
         return response.json();

@@ -7,14 +7,13 @@ const API_KEY = "4fc5c967cc2d4ee0943aa17e3a78d7a7",
   subTitle =  document.querySelector(".subTitle"),
   HTMLschoolmeal = document.querySelector(".schoolmeal"),
   date = new Date(),
-  dayOfWeek = date.getDay(),
   leftButton = document.querySelector(".left"),
   rightButton = document.querySelector(".right");
   
 let API_DATE = "20210319",
   schoolmealInfo = 0,
   koScName = '0',
-  menuInfo2 = 0;
+  dayOfWeek = ''
 
 
 
@@ -23,6 +22,15 @@ function getDateInfo(){
   API_DATE =`${date.getFullYear()}${date.getMonth()+1 > 9 ? date.getMonth()+1 : `0${date.getMonth()+1}`}${date.getDate() < 10 ? `0${date.getDate()}` : date.getDate() }`;//간소화?
   API_DATE = API_DATE*1;
   console.log(API_DATE);  
+}
+
+function weekendCheck(date){
+  const day = new Date(date).getDay()
+  if  (day == 0 | day == 6){
+    return true;
+  } else {
+    return false;
+  }
 }
 
 function getMenuAPI(){
@@ -36,7 +44,11 @@ function getMenuAPI(){
       console.log(schoolmealInfo);
       HTMLschoolmeal.innerHTML = schoolmealInfo;
     } catch (e) {
-      HTMLschoolmeal.innerHTML = `${e.name}:<br>급식 정보를 불러오지 못했습니다 :(`;
+      if (weekendCheck == true) {
+        HTMLschoolmeal.innerHTML = '주말입니다!'
+      } else {
+        HTMLschoolmeal.innerHTML = `${e.name}:<br>급식 정보를 불러오지 못했습니다 :(`;
+      }
     }
   });
 }
