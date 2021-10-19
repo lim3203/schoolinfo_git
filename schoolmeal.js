@@ -15,9 +15,6 @@ let API_DATE = "20210319",
   koScName = '0',
   dayOfWeek = ''
 
-
-
-
 function getDateInfo(){
   API_DATE =`${date.getFullYear()}${date.getMonth()+1 > 9 ? date.getMonth()+1 : `0${date.getMonth()+1}`}${date.getDate() < 10 ? `0${date.getDate()}` : date.getDate() }`;//간소화?
   API_DATE = API_DATE*1;
@@ -26,7 +23,7 @@ function getDateInfo(){
 
 function weekendCheck(date){
   const day = new Date(date).getDay()
-  if  (day == 0 | day == 6){
+  if  (day == 0 || day == 6){
     return true;
   } else {
     return false;
