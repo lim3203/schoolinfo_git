@@ -19,9 +19,25 @@ function getDateInfo(){
   API_DATE =`${date.getFullYear()}${date.getMonth()+1 > 9 ? date.getMonth()+1 : `0${date.getMonth()+1}`}${date.getDate() < 10 ? `0${date.getDate()}` : date.getDate() }`;
 }
 
+function YMDFormatter(num){
+  if(!num) return "";
+  var formatNum = '';
+  num=num.replace(/\s/gi, "");
+  try{
+      if(num.length == 8) {
+            formatNum = num.replace(/(\d{4})(\d{2})(\d{2})/, '$1-$2-$3');
+      }
+  } catch(e) {
+      formatNum = num;
+      console.log(e);
+  }
+  return formatNum;
+}
+
 function weekendCheck(date){//수정 필요
   console.log(date)
-  const thedate = new Date(date);
+  thedate = YMDFormatter(date);
+  const thedate = new Date(s);
   console.log(thedate);
   const day = thedate.getDay()
   if  (day == 0 || day == 6){
