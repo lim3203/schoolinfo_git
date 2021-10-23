@@ -1,7 +1,6 @@
 const API_KEY = "4fc5c967cc2d4ee0943aa17e3a78d7a7",
   API_EDUCODE = localStorage.getItem("key"),
   API_SCHOOLCODE = localStorage.getItem("SDCODE"),
-  stNumber = localStorage.getItem("STNUM"),
   stGrade = localStorage.getItem("GRADENUM"),
   claNumber = localStorage.getItem("CLANUM"),
   subTitle =  document.querySelector(".subTitle"),

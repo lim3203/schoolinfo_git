@@ -1,13 +1,17 @@
-const schedule = document.querySelector('.timetable');
+const timetable = document.querySelector('.timetable'),
+  API_SCHOOLCODE = localStorage.getItem("SDCODE"),
+  stGrade = localStorage.getItem("GRADENUM"),
+  claNumber = localStorage.getItem("CLANUM");
+
 let todaySchedule;
 
 function getDateInfo(){
   const date = new Date();
   const dayOfWeek = date.getDay();
-  API_DATE = `${date.getFullYear()}${date.getMonth()+1 > 9 ? date.getMonth()+1 : `0${date.getMonth()+1}`}${date.getDate()}`;//간소화?
+  API_DATE = `${date.getFullYear()}${date.getMonth()+1 > 9 ? date.getMonth()+1 : `0${date.getMonth()+1}`}${date.getDate()}`;
   console.log(API_DATE);
   if (dayOfWeek == 0 || dayOfWeek == 6){
-    menuabc.innerHTML = "오늘은 학교 안 가는 날!";
+    timetable.innerHTML = "오늘은 학교 안 가는 날!";
   } else {
     getScheduleAPI();
   }
