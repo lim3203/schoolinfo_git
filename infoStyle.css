@@ -10,7 +10,8 @@
 .flex {
     display: flex;
     flex-direction: column;
-    margin: 0.7vw;
+    margin: 0.5vw;
+    padding-top: 1vw;
 }
 
 select{
@@ -74,7 +75,7 @@ input[type="text"],[type="number"] {
 
 .box {
     margin: 3vw;
-    padding: 3vw;
+    padding: 2vw;
     border-radius: 2vw;
     background: #f2e8de;
   }

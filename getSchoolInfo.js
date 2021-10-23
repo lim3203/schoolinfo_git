@@ -10,8 +10,7 @@ let
     SCHOOL_NAME = "0",
     sdSchoolCode = "0",
     stGrade = "0",
-    claNumber = "0",
-    lsTest_data = "0";
+    claNumber = "0";
 
 function save(){
     provinceCode = province.options[province.selectedIndex].value;
@@ -25,12 +24,14 @@ function save(){
     localStorage.setItem("CLANUM",claNumber);
     localStorage.setItem("GRADENUM", stGrade);
     getSchoolCode();
-    alert("학교 정보가 저장되었습니다 :D")
+    
+    //alert("학교 정보가 저장되었을까요 :D");
 }
 
 
+
+
 function getSchoolCode(){
-    console.log(lsTest_data);
     console.log(SCHOOL_NAME);
     fetch(`https://open.neis.go.kr/hub/schoolInfo?KEY=${API_KEY}&TYPE=json&ATPT_OFCDC_SC_CODE=${localStorage.getItem("key")}&SCHUL_NM=${SCHOOL_NAME}`)
     .then(function(response){
@@ -41,9 +42,22 @@ function getSchoolCode(){
          sdSchoolCode = json.schoolInfo[1].row[0].SD_SCHUL_CODE;
          localStorage.setItem("SDCODE", sdSchoolCode);
          console.log(sdSchoolCode);
+         SCHOOL_NAME = "음";
+         saveAlert();
       });
 }
 
+function saveAlert(){
+    if ((sdSchoolCode === "0")) {
+        alert("학교 정보가 저장되지 않았어요 :(");
+        sdSchoolCode = "0";
+    } else if((sdSchoolCode == 7010057)) {
+        alert("학교 정보가 저장되지 않았어요 :(");
+    } else  {
+        alert("학교 정보가 저장되었어요 :D");
+        sdSchoolCode = "0";
+    }
+}
 
 function init(){
     console.log("hello");
