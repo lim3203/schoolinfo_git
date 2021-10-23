@@ -1,7 +1,6 @@
 const API_KEY = "4fc5c967cc2d4ee0943aa17e3a78d7a7",
   API_EDUCODE = localStorage.getItem("key"),
   API_SCHOOLCODE = localStorage.getItem("SDCODE"),
-  stNumber = localStorage.getItem("STNUM"),
   stGrade = localStorage.getItem("GRADENUM"),
   claNumber = localStorage.getItem("CLANUM"),
   subTitle =  document.querySelector(".subTitle"),
@@ -19,11 +18,19 @@ function getDateInfo(){
   API_DATE =`${date.getFullYear()}${date.getMonth()+1 > 9 ? date.getMonth()+1 : `0${date.getMonth()+1}`}${date.getDate() < 10 ? `0${date.getDate()}` : date.getDate() }`;
 }
 
-function weekendCheck(date){//수정 필요
-  console.log(date)
-  const thedate = new Date(date);
-  console.log(thedate);
-  const day = thedate.getDay()
+function to_date(date_str)
+{
+    var yyyyMMdd = String(date_str);
+    var sYear = yyyyMMdd.substring(0,4);
+    var sMonth = yyyyMMdd.substring(4,6);
+    var sDate = yyyyMMdd.substring(6,8);
+
+    return new Date(Number(sYear), Number(sMonth)-1, Number(sDate));
+}
+
+function weekendCheck(date){
+  console.log(to_date(date))
+  const day = to_date(date).getDay()
   if  (day == 0 || day == 6){
     return true;
   } else {
@@ -53,25 +60,25 @@ function getMenuAPI(){
 }
 
 function leftBottonClickHandle() {
-  API_DATE -= 1
-  console.log(API_DATE);
+  API_DATE = Number(API_DATE) - 1
+  console.log(`date = ${API_DATE}`);
   getMenuAPI();
 }
 
 function rightBottonClickHandle() {
-  API_DATE += 1
-  console.log(API_DATE);
+  API_DATE = Number(API_DATE) + 1
+  console.log(`date = ${API_DATE}`);
   getMenuAPI();
 }
 
 function init(){
- getDateInfo();
- leftButton.addEventListener('click', leftBottonClickHandle);
- rightButton.addEventListener('click', rightBottonClickHandle);
- getMenuAPI();
- koScName = localStorage.getItem("krScName");
- subTitle.innerHTML = koScName;
- console.log(koScName);
+  getDateInfo();
+  leftButton.addEventListener('click', leftBottonClickHandle);
+  rightButton.addEventListener('click', rightBottonClickHandle);
+  getMenuAPI();
+  koScName = localStorage.getItem("krScName");
+  subTitle.innerHTML = koScName;
+  console.log(koScName);
 }
 
 init();
