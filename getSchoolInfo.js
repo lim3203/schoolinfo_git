@@ -38,22 +38,30 @@ function getSchoolCode(){
         return response.json();
       })
       .then(function(json){
+          try {
+            console.log(json.RESULT.MESSAGE);
+              alert("학교 정보가 저장되지 않았어요");
+          } catch (err) {
+         
         console.log(json);
          sdSchoolCode = json.schoolInfo[1].row[0].SD_SCHUL_CODE;
          localStorage.setItem("SDCODE", sdSchoolCode);
          console.log(sdSchoolCode);
          SCHOOL_NAME = "음";
+         console.log(sdSchoolCode);
          saveAlert();
-      });
+      };
+    }
+      );
 }
 
 function saveAlert(){
-    if ((sdSchoolCode === "0")) {
+    if ((sdSchoolCode === 0)) {
         alert("학교 정보가 저장되지 않았어요 :(");
         sdSchoolCode = "0";
     } else if((sdSchoolCode == 7010057)) {
         alert("학교 정보가 저장되지 않았어요 :(");
-    } else  {
+    } else {
         alert("학교 정보가 저장되었어요 :D");
         sdSchoolCode = "0";
     }
